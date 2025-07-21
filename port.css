@@ -59,10 +59,50 @@ a{
 .homeinfo h1{
     font-size: 55px;
 }
+/* leftsidenamechanger */
 .homeinfo h2{
-    font-size: 16px;
-    margin:10px 0 25px;
+    display: inline-block;
+    font-size: 32px;
+    margin-top: -10px;
+    
 }
+.homeinfo h2 span{
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke:.7px #7cf03d ;
+    animation:display-text 16s linear infinite;
+    animation-delay:calc(-4s * var(--i));
+}
+@keyframes display-text{
+    25%,100%{
+        display: none;
+    }
+}
+.homeinfo h2 span::before {
+  content: attr(data-text);
+  position: absolute;
+  width: 0;
+  border-right: 2px solid #7cf03d;
+  color: #7cf03d;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+  10%,
+  100% {
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 100%;
+  }
+}
+
+/* end  */
 .homeinfo p{
     font-size: 16px;
     margin:10px 0 25px;
@@ -124,7 +164,16 @@ a{
     width: 500px;
     height: 500px;
     background: conic-gradient(transparent,transparent,transparent,#7cf03d);
-
+    transform: rotate(0deg);
+    animation: rotate-border 10s linear infinite;
+}
+.homeimg .imgbox::after{
+    animation-delay: -5s;
+}
+@keyframes rotate-border{
+    100%{
+        transform: rotate(360deg);
+    }
 }
 .homeimg .imgbox .imgitem{
     position: relative;
@@ -144,6 +193,161 @@ a{
     display: block;
     width:85%;
     object-fit:cover;
+}
+
+/* education section */
+.education {
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+    padding: px;
+}
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 0;
+    width: 90%;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #ddd;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin: 20px 0;
+    width: calc(50% - 40px);
+    padding: 20px;
+    background: var(--main-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(8, 234, 46, 0.1);
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    transform: translateX(20px);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background:#7cf03d;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px#0d443b;
+}
+
+.timeline-item:nth-child(even)::before {
+    right: auto;
+    left: -10px;
+}
+
+.timeline-content {
+    position: relative;
+    padding: 10px;
+}
+.timeline-content h3{
+    font-size: 1.5rem;
+    font-family: "Sulphur Point", sans-serif;
+    font-weight: 600;
+}
+.year {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.year i {
+    margin-right: 10px;
+}
+.education .education-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+.education-row .education-column {
+    flex: 1 1 30rem;
+}
+
+.education-column .title {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 2rem;
+}
+.education-column .education-box {
+    border-left: 0.2rem solid var(--second-bg-color)
+}
+.education-box .education-content{
+    position: relative;
+    padding-left: 2rem;
+}
+.education-box .education-content::before {
+    content: '';
+    position: absolute;
+    top: 10;
+    left: -1.2%;
+    width: 1rem;
+    height: 1rem;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+.education-content .content{
+    position: relative;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+.education-content .content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background:white;
+    z-index: -1;
+    transition: .5s;
+}
+.education-content .content:hover:before {
+    width: 100%;
+}
+.education-content .content .year{
+    font-size: 1.5rem;
+    color: var(--main-color);
+    padding-right: .5rem;
+}
+.education-content .content .year i {
+    padding-right: .5rem;
+}
+.education-content .content h3 {
+    font-size: 1.5rem;
+    font-family: "Sulphur Point", sans-serif;
+}
+.education-content .content p {
+    font-size: 1.6rem;
+    padding-top: .5rem;
+    font-family: "Sulphur Point", sans-serif;
 }
 
 
