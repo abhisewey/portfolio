@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -194,6 +197,44 @@ a{
     width:85%;
     object-fit:cover;
 }
+/* aboutmesection */
+.aboutcontainer {
+  max-height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-content {
+  border-left: 2px solid #7cf03d;
+  border-right: 2px solid #7cf03d;
+  margin-left: 120px;
+  margin-right: 120px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  height: 100vh;
+  overflow: auto;
+  scroll-margin-top: 80px; /* So navbar doesn't overlap */
+}
+
+
+#abouth3 {
+  padding: 20px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #ededed;
+  -webkit-text-stroke: 0.7px #7cf03d;
+  text-align: center;
+}
+
+#aboutp {
+  padding: 20px;
+  margin: 40px 120px 30px;
+  text-align: center;
+  font-size: 19.2px;
+  font-family: "Sulphur Point", sans-serif;
+  letter-spacing: 1.6px;
+  color: #ededed;
+}
 
 /* education section */
 .education {
@@ -205,6 +246,9 @@ a{
     min-height: auto;
     padding-bottom: 5rem;
     padding: px;
+}
+#abouth3{
+    font-size: 40px;
 }
 .timeline {
     position: relative;
@@ -229,7 +273,6 @@ a{
     margin: 20px 0;
     width: calc(50% - 40px);
     padding: 20px;
-    background: var(--main-color);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(8, 234, 46, 0.1);
 }
@@ -252,7 +295,7 @@ a{
     height: 20px;
     background:#7cf03d;
     border-radius: 50%;
-    box-shadow: 0 0 0 4px#0d443b;
+    
 }
 
 .timeline-item:nth-child(even)::before {
@@ -293,7 +336,7 @@ a{
     margin: 0 0 1.5rem 2rem;
 }
 .education-column .education-box {
-    border-left: 0.2rem solid var(--second-bg-color)
+    border-left: 0.2rem solid #7cf03d;
 }
 .education-box .education-content{
     position: relative;
@@ -306,14 +349,13 @@ a{
     left: -1.2%;
     width: 1rem;
     height: 1rem;
-    background: var(--main-color);
     border-radius: 50%;
 }
 .education-content .content{
     position: relative;
     padding: 1.5rem;
     font-size: 1.5rem;
-    border: .2rem solid var(--main-color);
+    border: .2rem solid #7cf03d;
     border-radius: .6rem;
     margin-bottom: 2rem;
     overflow: hidden;
@@ -334,7 +376,7 @@ a{
 }
 .education-content .content .year{
     font-size: 1.5rem;
-    color: var(--main-color);
+    color:  #7cf03d;
     padding-right: .5rem;
 }
 .education-content .content .year i {
@@ -349,6 +391,125 @@ a{
     padding-top: .5rem;
     font-family: "Sulphur Point", sans-serif;
 }
+
+/* myservicesection */
+.services{
+    padding-left:90px;
+    padding-right: 90px;
+}
+.servicelist{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap:40px;
+    margin-top: 50px;
+}
+.servicelist div{
+    border: 20px;
+    border: 2px solid #7cf03d;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s,transform 0.5s;
+}
+.servicelist div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.servicelist div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.servicelist div a{
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.servicelist div:hover{
+    background-color: #fff;
+    transform: translateY(-10px);
+}
+/* portfolio section */
+/* portfolio section */
+.portfolio {
+    padding-left:90px;
+    padding-right: 90px;
+}
+
+.worklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* reduced card size */
+    grid-gap: 40px; 
+    margin-top: 40px;
+}
+
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img {
+    width: 100%;
+    height: 450px; 
+    object-fit: cover; 
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;  
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #7cf03d);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px; 
+    text-align: center;
+    font-size: 20px; 
+    color: white;
+    transition: height .5s;
+}
+
+.layer h3 {
+    font-weight: 500;
+    font-size: 20px; 
+    margin-bottom: 15px;
+}
+
+.layer a {
+    margin-top: 15px;
+    color: #1f242d;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 50px;
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.work:hover img {
+    transform: scale(1.1);
+}
+
+.work:hover .layer {
+    height: 100%;
+}
+
+/* contactmesection */
+
 
 
 
