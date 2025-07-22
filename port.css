@@ -509,10 +509,87 @@ a{
 }
 
 /* contactmesection */
+#contact {
+    padding: 50px 0;
+    background: #1f242d;
+    color: white;
+}
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
 
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
+.contact-left {
+    flex-basis: 35%;
+}
 
+.contact-right {
+    flex-basis: 60%;
+}
 
+.contact-left p {
+    margin: 30px 0;
+    font-size: 18px;
+}
 
+.contact-left p i {
+    color: #7cf03d;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.btn {
+    display: inline-block;
+    background: #7cf03d;
+    color: white;
+    padding: 14px 30px;
+    font-size: 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.5s;
+}
 
+.btn:hover {
+    background: #1f242d;
+}
+
+.contact-right form {
+    width: 100%;
+}
+
+form input, form textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    background:#1f242d;
+    padding: 15px;
+    margin: 15px 0;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form .btn {
+    margin-top: 20px;
+}
+
+.coright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background:white;
+    font-weight: 300;
+    margin-top:20px;
+    color: #1f242d;
+}
